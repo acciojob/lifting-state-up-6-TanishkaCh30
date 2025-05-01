@@ -7,9 +7,9 @@ const Parent = () =>{
     let[todos,setTodos] = useState([
         {text:'Learn React',completed:false},
         // {text:'Build a React app',completed:false},
-        // {text:'Deploy the React app',completed:false}
+        // {text:'Deploy the React app',completed:true}
     ])
-    console.log(todos);
+    // console.log(todos);
      const handleComplete = (index) =>{
         
         let updateTodos = todos.map((val,i)=>(
