@@ -17,7 +17,7 @@ const Child = ({value, handleComplete }) =>{
                         {!val.completed &&
                         <button onClick={()=>(
                             handleComplete(index)
-                        )}>Completed</button>
+                        )}>complete</button>
                     }
                        </li>
 
