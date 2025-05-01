@@ -6,8 +6,8 @@ const Parent = () =>{
   
     let[todos,setTodos] = useState([
         {text:'Learn React',completed:false},
-        {text:'Build a React app',completed:false},
-        {text:'Deploy the React app',completed:false}
+        // {text:'Build a React app',completed:false},
+        // {text:'Deploy the React app',completed:false}
     ])
     console.log(todos);
      const handleComplete = (index) =>{
