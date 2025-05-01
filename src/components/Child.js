@@ -1,13 +1,9 @@
 import React from 'react'
 
 
-const Child = ({value,setItems}) =>{
+const Child = ({value, handleComplete }) =>{
 
-    function handleClick(e){
-     let clickedButton = e.target;
-     clickedButton.classList.add("none");
-    }
-
+    
 
     return(
         <div>
@@ -17,9 +13,14 @@ const Child = ({value,setItems}) =>{
             {
                 value.map((val,index) =>(
                     <ul>
-                        <li key={index}>{val}
-                            <button onClick={handleClick}>Complete</button>
-                        </li>
+                       <li key={index}>{val.text}{val.completed===true && " "}
+                        {!val.completed &&
+                        <button onClick={()=>(
+                            handleComplete(index)
+                        )}>Completed</button>
+                    }
+                       </li>
+
                     </ul>
                 ))
             }

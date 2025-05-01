@@ -4,7 +4,19 @@ import Child from './Child'
 
 const Parent = () =>{
   
-    let[todos,setTodos] = useState(['Learn React','Build a React app','Deploy the React app'])
+    let[todos,setTodos] = useState([
+        {text:'Learn React',completed:false},
+        {text:'Build a React app',completed:false},
+        {text:'Deploy the React app',completed:false}
+    ])
+    console.log(todos);
+     const handleComplete = (index) =>{
+        
+        let updateTodos = todos.map((val,i)=>(
+            i===index ? {...val,completed:true} : val
+        ))
+        setTodos(updateTodos);
+     }
 
     return(
         <div>
@@ -12,7 +24,7 @@ const Parent = () =>{
             <h1>Parent Component</h1>
 
          <Child
-         setItems = {setTodos}
+         handleComplete = {handleComplete}
          value={todos}
          ></Child>
 
